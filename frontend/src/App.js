@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Callback from './Callback';
+import FindLeague from './components/FindLeague';
+import CreateLeague from './components/CreateLeague';
 
 
 class App extends Component {
@@ -10,8 +12,11 @@ class App extends Component {
     return (
       <div>
       <NavBar/>
-        <p>Work in progress.</p>
+        <Link to={'/FindLeague'}>FIND LEAGUE</Link>
+        <Link to={'/CreateLeague'}>CREATE LEAGUE</Link>
         <Route exact path='/callback' component={Callback}/>
+        <Route path= '/findLeague' component={FindLeague}/>
+        <Route path= '/CreateLeague' component={CreateLeague}/>
       </div>
       );
   }
