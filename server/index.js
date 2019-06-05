@@ -27,7 +27,12 @@ app.listen(8081, () => {
 
 const url = 'mongodb://localhost/SurvivorDB';
 
-MongoClient.connect(url, function(err, db) {
-	console.log('Connected to db');
-	db.close();
+// MongoClient.connect(url, function(err, db) {
+// 	console.log('Connected to db');
+// 	db.close();
+// });
+
+app.post('/createTeam', function(req,res) {
+	console.log(req);
+	res.send('got team')
 });
