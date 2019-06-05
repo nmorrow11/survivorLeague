@@ -16,7 +16,7 @@ class App extends Component {
         <Link to={'/CreateLeague'}>CREATE LEAGUE</Link>
         <Route exact path='/callback' component={Callback}/>
         <Route path= '/findLeague' component={FindLeague}/>
-        <Route path= '/CreateLeague' component={CreateLeague}/>
+        <Route path= '/createLeague' component={CreateLeague}/>
       </div>
       );
   }
