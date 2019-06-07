@@ -27,12 +27,20 @@ app.listen(8081, () => {
 
 const url = 'mongodb://localhost/SurvivorDB';
 
-// MongoClient.connect(url, function(err, db) {
-// 	console.log('Connected to db');
-// 	db.close();
-// });
-
-app.post('/createTeam', function(req,res) {
-	console.log(req);
-	res.send('got team')
+app.post('/createLeague', function(req,res) {
+	MongoClient.connect(url, function(err, db) {
+		const database = db.db('Survivor');
+		database.collection('leagueName').find({name: req.body.league}).toArray(function(err, results) {
+			if(results.length > 0){
+				res.send({message: 'Duplicate'});
+			} else {
+				database.collection('leagueName').insert({name: req.body.league}, function(err, result) {
+					console.log(result)
+					res.send({message:'League Created'});
+				});
+			}
+		})
+	});
+	console.log(req.body);
+	//res.send('got league')
 });

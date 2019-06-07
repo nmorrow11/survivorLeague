@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Callback from './Callback';
 import FindLeague from './components/FindLeague';
 import CreateLeague from './components/CreateLeague';
+import Home from './components/Home';
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
         <Route exact path='/callback' component={Callback}/>
         <Route path= '/findLeague' component={FindLeague}/>
         <Route path= '/createLeague' component={CreateLeague}/>
+        <Route path= '/home' component={Home}/>
       </div>
       );
   }
